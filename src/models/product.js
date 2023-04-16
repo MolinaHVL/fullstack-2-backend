@@ -9,7 +9,7 @@ const ProductSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  heaterStatus: {
+  peltierStatus: {
     type: Boolean,
     required: true,
   },
