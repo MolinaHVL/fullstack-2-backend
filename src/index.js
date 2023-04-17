@@ -4,8 +4,7 @@ const cors = require("cors");
 
 require("dotenv").config();
 
-const productsRotuer = require("./routes/products");
-const ordersRouter = require("./routes/orders");
+const studentsRouter = require("./routes/students");
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -17,8 +16,7 @@ app.get("/", (req, res) => {
   res.json({ message: "Hello Bootcamp!" });
 });
 
-app.use("/products", productsRotuer);
-app.use("/orders", ordersRouter);
+app.use("/students", studentsRouter);
 
 const connectDb = () => {
   mongoose.connect(process.env.DB_URI);
