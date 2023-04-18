@@ -1,9 +1,9 @@
 const StudentService = require("../services/student-service");
 
 const getStudents = async (req, res) => {
-  const Students = await StudentService.getStudents();
+  const students = await StudentService.getStudents();
 
-  res.json(Students);
+  res.json(students);
 };
 
 const saveStudent = async (req, res) => {
