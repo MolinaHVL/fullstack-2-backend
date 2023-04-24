@@ -1,16 +1,17 @@
-const Student = require("../models/student");
+const StudentModel = require("../models/student");
 const SetClaim = require("../firebase/set-custom-claims");
 
 const getStudents = async () => {
-  const students = await Student.find().lean().exec();
+  const students = await StudentModel.find().lean().exec();
   return students;
 };
 
-const saveStudent = async (student, UserUID) => {
+const saveStudent = async (student) => {
   const savedStudent = new StudentModel(student);
-  console.log(UserUID)
+
   await savedStudent.save()
-    .then(SetClaim.SetClaim(UserUID, "Student"));
+
+  // .then(SetClaim.SetClaim(UserUID, "Student"));
 
   return savedStudent;
 };
