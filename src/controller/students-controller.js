@@ -8,7 +8,6 @@ const getStudents = async (req, res) => {
 
 const saveStudent = async (req, res) => {
   const Student = req.body;
-  // const UserUID = req.headers["User-UID"];
 
   const savedStudent = await StudentService.saveStudent(Student);
 

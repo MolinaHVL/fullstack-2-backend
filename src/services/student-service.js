@@ -11,7 +11,7 @@ const saveStudent = async (student) => {
 
   await savedStudent.save()
 
-  // .then(SetClaim.SetClaim(UserUID, "Student"));
+    .then(SetClaim.SetClaim(student.uid, "Student"));
 
   return savedStudent;
 };
