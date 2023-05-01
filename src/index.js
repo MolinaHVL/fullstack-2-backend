@@ -32,6 +32,13 @@ const io = require('socket.io')(server, {
   cors: { origin: '*' }
 });
 
+const corsOptions = {
+  origin: 'https://molinahvl.github.io',
+  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+
+app.use(cors(corsOptions));
+
 io.on("connection", (socket) => {
   console.log("A user connected to the chat");
 
