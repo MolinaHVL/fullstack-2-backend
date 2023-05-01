@@ -29,11 +29,9 @@ const SetClaim = (UserUID, claim) => {
         .setCustomUserClaims(UserUID, customClaims)
         .then(() => {
             console.log(`Custom claim "${claim}" set for user: ${UserUID}`);
-            process.exit();
         })
         .catch((error) => {
             console.error(`Error setting custom claim "${claim}" for user: ${UserUID}`, error);
-            process.exit(1);
         });
 }
 
