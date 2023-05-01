@@ -28,4 +28,24 @@ const server = app.listen(port, () => {
   connectDb();
 });
 
+const io = require('socket.io')(server, {
+  cors: { origin: '*' }
+});
+
+io.on("connection", (socket) => {
+  console.log("A user connected to the chat");
+
+  // Handle incoming messages
+  socket.on("message", (data) => {
+    console.log("Received message:", data);
+    // Broadcast the message to all connected clients
+    io.emit("message", data);
+  });
+
+  // Handle disconnections
+  socket.on("disconnect", () => {
+    console.log("A user disconnected from the chat");
+  });
+});
+
 module.exports = { app, server };
