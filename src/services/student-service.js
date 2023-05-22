@@ -36,7 +36,17 @@ const getStudentById = async (id) => {
   return student;
 };
 
+const getSingleStudentByEmail = async (email) => {
+  try {
+    return await StudentModel.findOne({ correo: email });
+  } catch (error) {
+    console.error(`Failed to get student by email: ${error}`);
+    return null; // Or throw an error, or return an error message, etc.
+  }
+}
+
 module.exports = {
+  getSingleStudentByEmail,
   getStudents,
   saveStudent,
   updateStudent,

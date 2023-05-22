@@ -36,7 +36,7 @@ const io = require('socket.io')(server, {
 
 const corsOptions = {
   // origin: 'https://molinahvl.github.io',
-  origin: 'http://localhost:3000',
+  origin: '*',
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 

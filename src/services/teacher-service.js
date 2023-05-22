@@ -23,6 +23,7 @@ const updateTeacher = async (id, newTeacherInfo) => {
     .lean()
     .exec();
 
+
   return updatedTeacher;
 };
 

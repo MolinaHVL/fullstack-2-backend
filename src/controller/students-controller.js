@@ -31,7 +31,16 @@ const deleteStudent = async (req, res) => {
   res.status(204).send();
 };
 
+const getSingleStudent = async (req, res) => {
+  const { email } = req.params;
+
+  const Student = await StudentService.getSingleStudentByEmail(email);
+
+  res.json(Student);
+};
+
 module.exports = {
+  getSingleStudent,
   getStudents,
   saveStudent,
   updateStudent,
