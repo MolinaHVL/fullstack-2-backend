@@ -2,7 +2,7 @@ const StudentService = require("../services/student-service");
 
 const getStudents = async (req, res) => {
   const students = await StudentService.getStudents();
-
+  console.log('obteniendo estudiantes...')
   res.json(students);
 };
 
