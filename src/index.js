@@ -5,6 +5,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 const studentsRouter = require("./routes/students");
+const teachersRouter = require("./routes/teachers")
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -17,6 +18,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/students", studentsRouter);
+app.use("/teachers", teachersRouter);
 
 const connectDb = () => {
   mongoose.connect(process.env.DB_URI);
@@ -33,7 +35,8 @@ const io = require('socket.io')(server, {
 });
 
 const corsOptions = {
-  origin: 'https://molinahvl.github.io',
+  // origin: 'https://molinahvl.github.io',
+  origin: 'http://localhost:3000',
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 

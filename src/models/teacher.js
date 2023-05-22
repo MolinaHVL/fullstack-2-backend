@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
-const StudentSchema = new mongoose.Schema({
+const TeacherSchema = new mongoose.Schema({
   correo: {
     type: String,
     required: true
@@ -49,8 +49,14 @@ const StudentSchema = new mongoose.Schema({
     type: String, // assuming the picture will be stored as a URL link
     required: true
   },
+  iden: {
+    type: String, // assuming the identification will be stored as a URL link
+    required: true
+  },
+  dip: {
+    type: String, // assuming the diploma will be stored as a URL link
+    required: true
+  }
 });
 
-const StudentModel = mongoose.model("Student", StudentSchema);
-
-module.exports = StudentModel;
+module.exports = mongoose.model('Teacher', TeacherSchema);
