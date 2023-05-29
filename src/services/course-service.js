@@ -85,7 +85,7 @@ const unEnrollCourse = async (courseId, studentId) => {
 };
 
 const deleteCourse = async (id) => {
-    return await CourseModel.findByIdAndDelete().exec()
+    return await CourseModel.findByIdAndDelete(id).exec()
 };
 
 module.exports = {
