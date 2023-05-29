@@ -37,8 +37,18 @@ const getTeacherById = async (id) => {
   return Teacher;
 };
 
+const getSingleTeacherByEmail = async (email) => {
+  try {
+    return await TeacherModel.findOne({ correo: email });
+  } catch (error) {
+    console.error(`Failed to get teacher by email: ${error}`);
+    return null; // Or throw an error, or return an error message, etc.
+  }
+}
+
 module.exports = {
   getTeachers,
+  getSingleTeacherByEmail,
   saveTeacher,
   updateTeacher,
   deleteTeacher,

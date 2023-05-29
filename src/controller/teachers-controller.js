@@ -6,6 +6,14 @@ const getTeachers = async (req, res) => {
   res.json(Teachers);
 };
 
+const getSingleTeacher = async (req, res) => {
+  const { email } = req.params;
+
+  const Teacher = await TeacherService.getSingleTeacherByEmail(email);
+
+  res.json(Teacher);
+};
+
 const saveTeacher = async (req, res) => {
   const Teacher = req.body;
 
@@ -33,6 +41,7 @@ const deleteTeacher = async (req, res) => {
 
 module.exports = {
   getTeachers,
+  getSingleTeacher,
   saveTeacher,
   updateTeacher,
   deleteTeacher,
