@@ -23,6 +23,14 @@ const CourseSchema = new mongoose.Schema({
     }],
     videos: [{
         url: String
+    }],
+    imagenPortada: {
+        type: String
+    },
+    comments: [{
+        profilePhoto: String,
+        from: String,
+        message: String,
     }]
 });
 

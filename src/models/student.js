@@ -49,6 +49,9 @@ const StudentSchema = new mongoose.Schema({
     type: String, // assuming the picture will be stored as a URL link
     required: true
   },
+  descripcion: {
+    type: String, // assuming the picture will be stored as a URL link
+  },
 });
 
 const StudentModel = mongoose.model("Student", StudentSchema);

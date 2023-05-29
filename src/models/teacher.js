@@ -56,6 +56,9 @@ const TeacherSchema = new mongoose.Schema({
   dip: {
     type: String, // assuming the diploma will be stored as a URL link
     required: true
+  },
+  descripcion: {
+    type: String,
   }
 });
 
